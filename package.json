@@ -1,6 +1,6 @@
 {
 	"name": "handler",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "A Handler That contains almost everything you need! Highly Customizable aswell! Made with discord.js",
 	"main": "index.js",
 	"dependencies": {

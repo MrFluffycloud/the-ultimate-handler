@@ -1,6 +1,6 @@
 console.clear();
 require('dotenv').config();
-require('./scripts/checker');
+require('./scripts/checker').client();
 
 const config = require('./config/config.js');
 const fs = require('fs');
@@ -14,6 +14,7 @@ const client = new Client({
 	intents: config.client.intents,
 	partials: config.client.partials,
 });
+require('./scripts/checker').finish(client);
 
 client.interactions = new Collection();
 client.categories = fs.readdirSync(`${__dirname}/commands/`);

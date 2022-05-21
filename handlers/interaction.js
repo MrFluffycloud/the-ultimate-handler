@@ -4,9 +4,6 @@ const fs = require('fs');
 const { info, error, warn } = require('../utils/functions');
 
 module.exports = async (client) => {
-	const clientId = client.config.client.id;
-	const guildId = client.config.guildId;
-
 	const GlobalCommands = [];
 	const GuildCommands = [];
 
@@ -17,7 +14,7 @@ module.exports = async (client) => {
 
 		commandFiles.forEach(async (file) => {
 			const command = require(`../commands/${dir}/${file}`);
-			if (command.global) {
+			if (command.global && client.config.guildId) {
 				GlobalCommands.push(command.data.toJSON());
 			} else if (!command.global) {
 				GuildCommands.push(command.data.toJSON());
@@ -30,6 +27,9 @@ module.exports = async (client) => {
 
 	const rest = new REST({ version: '9' }).setToken(client.config.client.token);
 
+	const clientId = client.config.client.id;
+	const guildId = client.config.guildId;
+
 	(async () => {
 		try {
 			info('Started refreshing application (/) commands.');
@@ -37,9 +37,11 @@ module.exports = async (client) => {
 				body: GlobalCommands,
 			});
 
-			await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
-				body: GuildCommands,
-			});
+			if (guildId) {
+				await rest.put(Routes.applicationGuildCommands(clientId, guildId), {
+					body: GuildCommands,
+				});
+			}
 
 			info('Successfully reloaded application (/) commands.');
 		} catch (err) {

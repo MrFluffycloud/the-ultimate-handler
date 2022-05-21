@@ -31,8 +31,8 @@ Made with 🤍 By [MrFluffycloud](https://mrfluffycloud.xyz)<br>
 **Node.js 16.9.0 or newer is required.**
 
 ```sh-session
-git clone
-cd
+git clone https://github.com/MrFluffycloud/the-ultimate-handler.git
+cd the-ultimate-handler
 npm install
 npm run setup
 ```
@@ -47,7 +47,7 @@ npm run setup
 
 ## Links
 
-- [Handler Guide](https://discordjs.guide/)
+- [Handler Guide](https://udjs.mrfluffycloud.xyz)
 - [Discord.js Website](https://discord.js.org)
 - [Discord.js Guide](https://discordjs.guide)
 - [discord.js Discord server](https://discord.gg/djs)
@@ -63,4 +63,4 @@ See [the contribution guide](https://github.com/discordjs/discord.js/blob/main/.
 
 - Handler Related Questions - [Support Server](https://discord.gg/9Eg7Ngj2PQ).
 - Discord.js Related Questions - [discord.js Server](https://discord.gg/djs).
-- Coding in General Related Questions - [Programer Hangout Discord Server](https://discord.gg/)
+- Coding in General Related Questions - [Programer Hangout Discord Server](https://discord.gg/programming)
