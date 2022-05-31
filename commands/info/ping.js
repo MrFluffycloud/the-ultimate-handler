@@ -1,8 +1,9 @@
 const { SlashCommandBuilder } = require('@discordjs/builders');
 
-
 module.exports = {
-	data: new SlashCommandBuilder().setName('ping').setDescription('🏓 Ping? Pong!'),
+	data: new SlashCommandBuilder()
+		.setName('ping')
+		.setDescription('🏓 Ping? Pong!'),
 	cooldown: 2,
 	category: 'info',
 	global: true,
@@ -11,6 +12,7 @@ module.exports = {
 	guilds: [],
 	async execute(interaction, client) {
 		await interaction.reply(`🏓 Pinging....`);
-		await interaction.editReply(`🏓 Pong: ${client.ws.ping}ms!`);
+
+		await interaction.editReply(`🏓 Pong ${client.ws.ping}ms!`);
 	},
 };

@@ -16,4 +16,7 @@ module.exports = {
  * 
  * @explore
  * Have a look for how it works?
+ * 
+ * @plans
+ * I plan to make a automated loader for these packages
 */

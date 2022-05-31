@@ -1,4 +1,7 @@
 module.exports = {
+	parserOptions: {
+		ecmaVersion: 12,
+	},
 	env: {
 		node: true,
 		commonjs: true,
@@ -6,8 +9,5 @@ module.exports = {
 		es6: true,
 	},
 	extends: 'eslint:recommended',
-	parserOptions: {
-		ecmaVersion: 12,
-	},
 	rules: {},
 };

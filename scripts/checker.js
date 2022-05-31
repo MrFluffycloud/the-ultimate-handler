@@ -33,12 +33,28 @@
  * @Warn
  */
 
+const figlet = require('figlet');
 const fs = require('fs');
 const { Intents } = require('discord.js');
 const { info, error, warn } = require('../utils/functions');
+const line = '-'.repeat(32);
 
 module.exports = {
 	client: function () {
+		info(line);
+		console.info(
+			figlet.textSync('UDJS!', {
+				font: 'rectangles',
+				horizontalLayout: 'default',
+				verticalLayout: 'default',
+				width: 30,
+				whitespaceBreak: true,
+			}),
+		);
+		info('v' + require('../package.json').version);
+
+		info(`Authors: MrFluffycloud`);
+		info(line);
 		if (fs.existsSync('./config/config.js')) {
 			info('Config Found!');
 			const config = require('../config/config');
@@ -66,6 +82,7 @@ module.exports = {
 				info(`To Run Setup: npm run setup`);
 				return process.exit(1);
 			} else {
+				info(line);
 				info(
 					`Token: ` +
 						config.client.token.slice(0, config.client.token.length / 4) +
@@ -76,6 +93,7 @@ module.exports = {
 						config.client.secret.slice(0, config.client.secret.length / 4) +
 						'*'.repeat((config.client.secret.length / 4) * 3),
 				);
+				info(line);
 				info(`Client ID: ${config.client.id}`);
 				info(
 					`Client Intents: ${config.client.intents
@@ -85,6 +103,12 @@ module.exports = {
 						.join(', ')}`,
 				);
 				info(`Client Partials: ${config.client.partials.join(', ')}`);
+				info(line);
+			}
+			if (config.antiCrash) {
+				info(`Anti Crash - Enabled`);
+			} else if (!config.antiCrash) {
+				info(`Anti Crash - Disabled`);
 			}
 		} else {
 			error('Config Not Found!');
@@ -105,6 +129,7 @@ module.exports = {
 					);
 					return process.exit(1);
 				} else {
+					info(line);
 					info(`Private Guild: ${guild.name}`);
 				}
 			}
@@ -118,7 +143,9 @@ module.exports = {
 				info(`Owners: ${out}`);
 			}
 
+			info(line);
 			info(`Ready! Logged in as ${client.user.tag}`);
+			info(line);
 		});
 	},
 };

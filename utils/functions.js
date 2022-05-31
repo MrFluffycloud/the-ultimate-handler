@@ -54,13 +54,6 @@ module.exports = {
 			chalk.bold.red('[ Anti Crash ]', chalk.reset.white(msg)),
 		);
 	},
-	messageExists: async function (messageId, channelId, client) {
-		let channel = await client.channels.fetch(channelId);
-		if (!channel) throw new Error("Couldn't find any channel with that id");
-		let message = await channel.messages.fetch(messageId);
-		if (!message) return false;
-		return message;
-	},
 	genEmbed: function (desc, color, title) {
 		let colors = require('../config/config').colors;
 		if (!desc)
@@ -75,5 +68,12 @@ module.exports = {
 		if (title) embed.setTitle(title);
 
 		return embed;
+	},
+	messageExists: async function (messageId, channelId, client) {
+		let channel = await client.channels.fetch(channelId);
+		if (!channel) throw new Error("Couldn't find any channel with that id");
+		let message = await channel.messages.fetch(messageId);
+		if (!message) return false;
+		return message;
 	},
 };

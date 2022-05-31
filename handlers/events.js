@@ -17,7 +17,6 @@ module.exports = async (client) => {
 				}
 			}
 		});
-		info('Logging into the BOT...');
 	} catch (err) {
 		error(err);
 	}

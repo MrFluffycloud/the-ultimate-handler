@@ -160,6 +160,12 @@ const questions = [
 		},
 	},
 	{
+		type: 'confirm',
+		name: 'antiCrash',
+		message: 'Should the Anti Crash System be Enabled?',
+		default: false,
+	},
+	{
 		type: 'input',
 		name: 'main_color',
 		message: 'What should be the Main Color be?',
@@ -223,6 +229,7 @@ async function x() {
 		const { Intents } = require('discord.js');
 
 		const config = {
+			antiCrash: answers.antiCrash,
 			client: {
 				intents: answers.intents.map((x) => {
 					return Intents.FLAGS[x];

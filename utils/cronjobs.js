@@ -12,6 +12,9 @@ module.exports = (client) => {
 		true,
 		'America/Los_Angeles',
 	);
+
+	every24.start();
+
 	const every12 = new CronJob(
 		'0 */12 * * *',
 		async function () {
@@ -21,7 +24,6 @@ module.exports = (client) => {
 		true,
 		'America/Los_Angeles',
 	);
-	
+
 	every12.start();
-	every24.start();
 };

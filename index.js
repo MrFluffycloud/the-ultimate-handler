@@ -25,11 +25,11 @@ client.emotes = require('./config/emotes.js');
 global.functions = require('./utils/functions.js');
 global.package = require('./package/index');
 
-['events', 'interaction', 'anti-Crash'].forEach((handler) => {
+['events', 'interaction'].forEach((handler) => {
 	require(`${__dirname}/handlers/${handler}`)(client);
 });
 
-['cronjobs'].forEach((utils) => {
+['cronjobs', 'anti-Crash'].forEach((utils) => {
 	require(`${__dirname}/utils/${utils}`)(client);
 });
 

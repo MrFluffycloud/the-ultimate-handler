@@ -14,6 +14,7 @@ module.exports = async (client) => {
 
 		commandFiles.forEach(async (file) => {
 			const command = require(`../commands/${dir}/${file}`);
+
 			if (command.global && client.config.guildId) {
 				GlobalCommands.push(command.data.toJSON());
 			} else if (!command.global) {

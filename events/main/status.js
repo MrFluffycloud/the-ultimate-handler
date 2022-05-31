@@ -2,7 +2,7 @@ module.exports = {
 	name: 'ready',
 	once: false,
 	async execute(client) {
-		const status = require('../../config/status')
+		const status = require('../../config/status');
 		const updatePresence = () => {
 			const presence =
 				status.presences[Math.floor(Math.random() * status.presences.length)];
@@ -14,6 +14,7 @@ module.exports = {
 		};
 
 		updatePresence();
+
 		setInterval(() => {
 			updatePresence();
 		}, 60000);

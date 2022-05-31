@@ -88,6 +88,7 @@ module.exports = {
 			await command.execute(interaction, client);
 		} catch (err) {
 			error(err);
+
 			await interaction.reply({
 				embeds: [
 					genEmbed(

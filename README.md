@@ -11,6 +11,11 @@
     <a href="https://github.com/prettier/prettier"><img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square" alt="Discord server" /></a>
     
   </p>
+  <a
+		href="[https://discord.com/users/676745968867082250](https://ko-fi.com/Z8Z542UDV)"
+	>
+		<img src="https://ko-fi.com/img/githubbutton_sm.svg" />
+	</a>
 </div>
 
 ## About
@@ -56,8 +61,7 @@ npm run setup
 ## Contributing
 
 Want to help us improve this project? You are more than welcome to do so!
-Let us know if you find some issues thru here - [Here]()<br>
-See [the contribution guide](https://github.com/discordjs/discord.js/blob/main/.github/CONTRIBUTING.md) if you'd like to submit a PR.
+Let us know if you find some issues thru here - [Here](https://github.com/MrFluffycloud/the-ultimate-handler/issues)<br>
 
 ## Help
 
